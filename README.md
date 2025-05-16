@@ -1,14 +1,5 @@
-# signoz
-signoz demo with docker-compose 
-
-```bash
-ansible-playbook up.yml
-```
-
-This does docker compose up on an "empty" signoz in a codespace. Use this as a starting point for instrumenting your app.
-
-```bash
-ansible-playbook down.yml
-```
-
-This does docker compose down on the clickhouse-setup/docker-compose-minimal.yaml (the same docker-compose file from up.yml)
+**Hypothesis:** The OpenTelemetry Collector is not collecting container metrics because the `docker_stats` receiver is missing.
+- **Fix:**
+  - Added `docker_stats` receiver in `otel-collector-config.yaml`
+  - Modified `metrics` pipeline to include the receiver
+- **Result:** Metrics still did not show up — socket access missing.
