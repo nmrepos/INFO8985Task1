@@ -6,7 +6,7 @@ Signoz has a facility to monitor docker. Unfortunately in https://github.com/rhi
 ---
 ## Hypothesis
 
-### 1 [`fix-otel-config`](https://github.com/nmrepos/INFO8985Task1/commits/fix-otel-config/)
+### 1 [`fix-otel-config`](https://github.com/nmrepos/INFO8985Task1/tree/fix-otel-config/)
 
 - **Hypothesis 1:** The OpenTelemetry Collector is not collecting container metrics because the `docker_stats` receiver is missing.
 - **Fix:**
@@ -19,7 +19,7 @@ Signoz has a facility to monitor docker. Unfortunately in https://github.com/rhi
 
 ---
 
-### 2 [`fix-docker-socket`](https://github.com/nmrepos/INFO8985Task1/commits/fix-docker-socket)
+### 2 [`fix-docker-socket`](https://github.com/nmrepos/INFO8985Task1/tree/fix-docker-socket)
 
 - **Hypothesis 2:** The OpenTelemetry Collector cannot read from the Docker API because the `/var/run/docker.sock` file is not mounted inside the container.
 - **Fix:**
