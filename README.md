@@ -1,5 +1,3 @@
-### 2 [`fix-docker-socket`](https://github.com/nmrepos/INFO8985Task1/tree/fix-docker-socket)
-
 - **Hypothesis 2:** The OpenTelemetry Collector cannot read from the Docker API because the `/var/run/docker.sock` file is not mounted inside the container.
 - **Fix:**
   - Edited docker compose files (core, minimal, testing)
