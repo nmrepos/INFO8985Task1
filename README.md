@@ -11,7 +11,9 @@ Signoz has a facility to monitor docker. Unfortunately in https://github.com/rhi
 - **Hypothesis 1:** The OpenTelemetry Collector is not collecting container metrics because the `docker_stats` receiver is missing.
 - **Fix:**
   - Added `docker_stats` receiver in `otel-collector-config.yaml`
+  - ![image](https://github.com/user-attachments/assets/2e07e234-5c01-4259-92e8-ea0ec9417bfb)
   - Modified `metrics` pipeline to include the receiver
+  - ![image](https://github.com/user-attachments/assets/8851815d-b4a1-4031-924a-5b23a79c021d)
 - **Result:** Metrics still did not show up — socket access missing.
 - **Conclusion:** This receiver is necessary but **not sufficient alone**.
 
@@ -22,6 +24,7 @@ Signoz has a facility to monitor docker. Unfortunately in https://github.com/rhi
 - **Hypothesis 2:** The OpenTelemetry Collector cannot read from the Docker API because the `/var/run/docker.sock` file is not mounted inside the container.
 - **Fix:**
   - Edited docker compose files (core, minimal, testing)
+  - ![image](https://github.com/user-attachments/assets/fb4034b7-9b65-4376-8f8a-a4104d4baea3)
   - Mounted Docker socket to `otel-collector`:
     ```yaml
     volumes:
