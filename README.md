@@ -32,7 +32,9 @@ Signoz has a facility to monitor docker. Unfortunately in https://github.com/rhi
 ---
 
 ## 📷 Result Screenshot
-
+services
+![image](https://github.com/user-attachments/assets/35251e44-d34d-447e-ae92-fb5493e73be3)
+---
 frontend
 ![image](https://github.com/user-attachments/assets/0012298c-12d5-407f-9567-79c7b70f5e30)
 ---
