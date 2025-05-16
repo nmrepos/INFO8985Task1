@@ -1,4 +1,7 @@
 receivers:
+  docker_stats:
+    endpoint: unix:///var/run/docker.sock
+    collection_interval: 10s
   tcplog/docker:
     listen_address: "0.0.0.0:2255"
     operators:
@@ -173,7 +176,7 @@ service:
       processors: [signozspanmetrics/cumulative, signozspanmetrics/delta, batch]
       exporters: [clickhousetraces]
     metrics:
-      receivers: [otlp]
+      receivers: [otlp, docker_stats]
       processors: [batch]
       exporters: [clickhousemetricswrite]
     metrics/generic:
